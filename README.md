@@ -26,3 +26,12 @@ Using the Wisconsin breast cancer diagnostic data set for predictive analysis
 
 **Conclusion**
 
+Out of all metrics, Logistic regression model gives the highest accuracy value
+
+| Models | Accuracy values |
+| ----------- | ----------- |
+| glm | 97.8 |
+| NB | 91.55 |
+| XGB | 94.37 |
+| XGB linear | 95.07 |
+| SVM | 94.37 |
