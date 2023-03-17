@@ -46,7 +46,6 @@ ggplot(breast.data,aes(smoothness_worst,area_worst,col=diagnosis))+
 breast.data1 = breast.data[,-c(1,2)]
 
 #Finding Correlated variables and doing PCA for reducing multicolinearity
-
 cor(breast.data1)
 corrplot(cor(breast.data1))
 
@@ -221,13 +220,14 @@ Pred_xgb = predict.train(xgb,xtest, type = "raw")
 Pred_xgblinear = predict.train(xgb_linear,xtest, type = "raw")
 Pred_svm = predict.train(svm,xtest, type = "raw")
 
+
 confusionMatrix(Pred_lg,ytest, mode = "prec_recall")
 confusionMatrix(Pred_nb,ytest, mode = "prec_recall")
 confusionMatrix(Pred_xgb,ytest, mode = "prec_recall")
 confusionMatrix(Pred_xgblinear,ytest, mode = "prec_recall")
 confusionMatrix(Pred_svm,ytest, mode = "prec_recall")
 
-
+# to find the important variable
 xgb1 = train(
   diagnosis~.,
   data=breast.data,
